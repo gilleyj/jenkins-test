@@ -2,7 +2,7 @@
 
 SLACK_WEBHOOK=https://hooks.slack.com/services/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
 
-apt install -y jq
+apk add jq
 
 echo "notify slack"
 
