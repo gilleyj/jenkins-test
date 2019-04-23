@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SLACK_WEBHOOK=https://hooks.slack.com/services/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
+SLACK_WEBHOOK=https://hooks.slack.com/services/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
 
 echo "notify slack"
 
