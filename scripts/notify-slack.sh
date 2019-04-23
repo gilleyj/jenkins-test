@@ -10,14 +10,18 @@ json_escape () {
 
 # post_to_slack channel username icon message hook
 function post_to_slack () {
-	channel="\"channel\":$(json_escape "${1}"),"
-	user="\"username\":$(json_escape "${2}"),"
-	icon="\"icon_emoji\":$(json_escape "${3}"),"
-	text="\"text\":$(json_escape "${4}"),"
-	hook=$5
-	
-	payload="payload={$channel$user$icon$text}"
-	echo "$(curl -s -S --data-urlencode "$payload" "$hook" 2>&1)"
+	jq -n \
+		--arg chn "${1}" \
+		--arg usr "${2}" \
+		--arg icn "${3}" \
+		--arg msg "${4}" \
+		'{ channel: $chn, username: $usr, icon_emoji: $icn, text: $msg }' \
+	| \
+	curl -d @- \
+		--url "${5}" \
+		-H 'Content-Type: application/json' \
+		-H 'Accept: application/json'
+
 }
 
 chn="#general"
