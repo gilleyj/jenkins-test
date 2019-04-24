@@ -12,7 +12,7 @@ function post_to_slack () {
 }
 
 chn="#general"
-msg="Jenkins build on ${JOB_NAME} - ${BRANCH_NAME} at ${JENKINS_URL} ${GIT_URL} ${GIT_BRANCH} is failing!"
+msg="Jenkins build on ${JOB_NAME} is failing!\n${JOB_NAME} at ${BUILD_URL}\n${GIT_URL} ${GIT_BRANCH}"
 icn=":ambulance:"
 usr="jenkins"
 hook=https://hooks.slack.com/services/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
