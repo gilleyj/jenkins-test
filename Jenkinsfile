@@ -1,7 +1,15 @@
 pipeline {
     agent any
-
+    environment {
+        color = "pink"
+    }
     stages {
+        stage('first') {
+            agent { label 'master' }
+            steps {
+                sh "printenv | sort"
+            }
+        }
         stage('Build') {
             steps {
                 echo 'Building..'
