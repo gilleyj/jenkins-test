@@ -17,4 +17,4 @@ icn=":broken_heart:"
 usr="jenkins"
 hook=https://hooks.slack.com/services/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
 
-post_to_slack "${chn}" "${usr}" "${icn}" "${msg}" ${hook}
+post_to_slack "${chn}" "${usr}" "${icn}" "${msg}" "${hook}"
