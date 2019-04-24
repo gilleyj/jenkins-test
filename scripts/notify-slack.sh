@@ -12,7 +12,7 @@ function post_to_slack () {
 }
 
 chn="#general"
-msg="*Jenkins build on ${JOB_NAME} is failing!*\n${BUILD_TAG} at ${BUILD_URL} or ${RUN_DISPLAY_URL}\n${GIT_URL} ${GIT_BRANCH}\n"
+msg="*Jenkins build on ${JOB_NAME} is failing! _${STAGE_NAME}_*\n${BUILD_TAG} at ${BUILD_URL} or ${RUN_DISPLAY_URL}\n${GIT_URL} ${GIT_BRANCH}\n"
 icn=":broken_heart:"
 usr="jenkins"
 hook=https://hooks.slack.com/services/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
